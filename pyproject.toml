@@ -1,0 +1,23 @@
+[project]
+name = "openaisdk"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "umerfayyaz97", email = "115028799+umerfayyaz97@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "asyncio>=3.4.3",
+    "litellm>=1.67.4.post1",
+    "openai-agents[litellm]>=0.0.13",
+    "python-dotenv>=1.1.0",
+]
+
+[project.scripts]
+openaisdk = "openaisdk:main"
+agent = "openaisdk.agent:call"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
