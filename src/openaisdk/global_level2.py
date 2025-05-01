@@ -10,7 +10,7 @@ load_dotenv()
 
 set_tracing_disabled(True)
 #setting model and api key
-MODEL = "gemini-2.0-flash"
+MODEL = "gemini-1.5-flash"
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
 set_default_openai_api("chat_completions")

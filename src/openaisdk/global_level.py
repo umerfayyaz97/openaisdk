@@ -10,7 +10,7 @@ load_dotenv()
 
 set_tracing_disabled(True)
 #setting model and api key
-MODEL = "gemini/gemini-2.0-flash"
+MODEL = "gemini/gemini-1.5-flash"
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
 # Set the default OpenAI client with the API key and base URL
@@ -27,7 +27,7 @@ model = OpenAIChatCompletionsModel(
     openai_client=external_client,
 )
 
-agent = Agent(name="Assistant", instructions="Your name is Assistant. You are a helpful assistant.",)
+agent = Agent(name="Assistant", instructions="Your name is Assistant. You are a helpful assistant.", model=model)
 
 result = Runner.run_sync(agent, "What is the capital of France?")
 
